@@ -35,63 +35,123 @@
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     border: 1px solid rgba(0, 0, 0, 0.05);
     height: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .client-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(var(--primary-rgb), 0.1);
-    border-color: rgba(var(--primary-rgb), 0.1);
+    box-shadow: 0 20px 40px rgba(var(--primary-rgb), 0.15);
+    border-color: rgba(var(--primary-rgb), 0.2);
+}
+
+.client-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.client-card:hover::after {
+    transform: scaleX(1);
 }
 
 .client-logo {
-    padding: 30px;
+    padding: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 150px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    background-color: #f8f8f8;
+    background-color: #ffffff;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .client-card:hover .client-logo {
-    background-color: #f5f5f5;
+    background-color: #fafafa;
 }
 
 .client-logo img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    transition: all 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.05));
 }
 
 .client-card:hover .client-logo img {
-    transform: scale(1.05);
+    transform: scale(1.08) translateY(-5px);
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.1));
 }
 
 .client-info {
     padding: 20px;
     text-align: center;
+    background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.client-card:hover .client-info {
+    background: linear-gradient(to bottom, #ffffff, #f5f5f5);
 }
 
 .client-info h3 {
     font-size: 1.2rem;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     color: var(--fg);
-    font-weight: 600;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.client-info h3::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.client-card:hover .client-info h3::after {
+    width: 50%;
 }
 
 .client-info p {
     font-size: 0.9rem;
     color: var(--fg200);
+    transition: all 0.3s ease;
+    opacity: 0.8;
 }
 
-/* Marquee styles */
+.client-card:hover .client-info p {
+    color: var(--primary);
+    opacity: 1;
+}
+
+/* Enhanced Marquee styles */
 .clients-marquee {
     margin: 60px 0;
     position: relative;
@@ -101,6 +161,10 @@
     --move-initial: calc(-25% + var(--offset));
     --move-final: calc(-50% + var(--offset));
     width: var(--marquee-width);
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    padding: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(var(--primary-rgb), 0.15);
 }
 
 .clients-marquee-track {
@@ -126,61 +190,96 @@
 .marquee-item span {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--fg);
-    opacity: 0.5;
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 0.9;
     transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .marquee-item:hover span {
-    color: var(--primary);
+    color: #ffffff;
     opacity: 1;
+    transform: scale(1.05);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .marquee-dot {
     margin: 0 10px;
-    color: var(--primary);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.5rem;
 }
 
-/* CTA styles */
+/* Enhanced CTA styles */
 .clients-cta {
     margin-top: 60px;
     text-align: center;
-    padding: 40px;
+    padding: 50px;
     background: white;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.clients-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.05) 0%, rgba(var(--secondary-rgb), 0.05) 100%);
+    z-index: 0;
+}
+
+.clients-cta::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
 }
 
 .clients-cta p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+    font-size: 1.4rem;
+    margin-bottom: 25px;
     color: var(--fg);
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
 }
 
 .btn-primary {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 14px 35px;
     background: linear-gradient(90deg, var(--primary), var(--secondary));
     color: white;
     border-radius: 30px;
     font-weight: 600;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     border: none;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(var(--primary-rgb), 0.2);
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.5px;
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(var(--primary-rgb), 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(var(--primary-rgb), 0.3);
+    background: linear-gradient(90deg, var(--primary), var(--primary));
 }
 
 @keyframes scroll {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-100%);
     }
@@ -192,28 +291,28 @@
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 20px;
     }
-    
+
     .client-logo {
         height: 120px;
         padding: 20px;
     }
-    
+
     .client-info h3 {
         font-size: 1rem;
     }
-    
+
     .client-info p {
         font-size: 0.8rem;
     }
-    
+
     .clients-cta {
         padding: 30px 20px;
     }
-    
+
     .clients-cta p {
         font-size: 1rem;
     }
-    
+
     .btn-primary {
         padding: 10px 25px;
         font-size: 0.9rem;

@@ -1,0 +1,15 @@
+<svg width="200" height="100" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498DB" />
+      <stop offset="100%" stop-color="#2980B9" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="100" fill="#FFFFFF" rx="10" ry="10" />
+  <rect x="60" y="30" width="80" height="40" rx="5" ry="5" fill="url(#techGradient)" />
+  <circle cx="80" cy="40" r="5" fill="#FFFFFF" />
+  <circle cx="100" cy="40" r="5" fill="#FFFFFF" />
+  <circle cx="120" cy="40" r="5" fill="#FFFFFF" />
+  <rect x="70" y="50" width="60" height="10" rx="2" ry="2" fill="#FFFFFF" />
+  <text x="100" y="85" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#333333">TECH INNOVATIONS</text>
+</svg>

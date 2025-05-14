@@ -1,0 +1,13 @@
+<svg width="200" height="100" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cafeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E67E22" />
+      <stop offset="100%" stop-color="#D35400" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="100" fill="#FFFFFF" rx="10" ry="10" />
+  <circle cx="100" cy="45" r="30" fill="url(#cafeGradient)" />
+  <path d="M70 45 C70 35, 130 35, 130 45" stroke="#FFFFFF" stroke-width="3" fill="none" />
+  <path d="M70 55 C70 65, 130 65, 130 55" stroke="#FFFFFF" stroke-width="3" fill="none" />
+  <text x="100" y="85" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#333333">URBAN CAFE</text>
+</svg>

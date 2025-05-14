@@ -1,0 +1,13 @@
+<svg width="200" height="100" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gourmetGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E74C3C" />
+      <stop offset="100%" stop-color="#C0392B" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="100" fill="#FFFFFF" rx="10" ry="10" />
+  <circle cx="100" cy="45" r="25" fill="url(#gourmetGradient)" />
+  <path d="M85 45 L115 45 M100 30 L100 60" stroke="#FFFFFF" stroke-width="3" />
+  <circle cx="100" cy="45" r="10" fill="#FFFFFF" />
+  <text x="100" y="85" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#333333">GOURMET RESTAURANT</text>
+</svg>

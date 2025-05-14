@@ -8,49 +8,48 @@ const Clients = () => {
     const sectionRef = useRef(null);
     const clientsRef = useRef([]);
 
-    // Client logos - using placeholder logos for now
-    // In a real implementation, you would replace these with actual client logos
+    // Client logos with colorful SVG designs
     const clients = [
         {
             name: "Luxury Homes",
-            logo: "https://placehold.co/200x100/f8f8f8/333333?text=Luxury+Homes",
-            category: "Residential"
+            logo: "/images/clients/luxury-homes-logo.svg",
+            category: "Residential",
         },
         {
             name: "Urban Cafe",
-            logo: "https://placehold.co/200x100/f8f8f8/333333?text=Urban+Cafe",
-            category: "Commercial"
+            logo: "/images/clients/urban-cafe-logo.svg",
+            category: "Commercial",
         },
         {
             name: "Serenity Spa",
-            logo: "https://placehold.co/200x100/f8f8f8/333333?text=Serenity+Spa",
-            category: "Commercial"
+            logo: "/images/clients/serenity-spa-logo.svg",
+            category: "Commercial",
         },
         {
             name: "Tech Innovations",
-            logo: "https://placehold.co/200x100/f8f8f8/333333?text=Tech+Innovations",
-            category: "Office"
+            logo: "/images/clients/tech-innovations-logo.svg",
+            category: "Office",
         },
         {
             name: "Dhaka Residences",
-            logo: "https://placehold.co/200x100/f8f8f8/333333?text=Dhaka+Residences",
-            category: "Residential"
+            logo: "/images/clients/dhaka-residences-logo.svg",
+            category: "Residential",
         },
         {
             name: "Harmony Hotels",
-            logo: "https://placehold.co/200x100/f8f8f8/333333?text=Harmony+Hotels",
-            category: "Hospitality"
+            logo: "/images/clients/harmony-hotels-logo.svg",
+            category: "Hospitality",
         },
         {
             name: "Modern Living",
-            logo: "https://placehold.co/200x100/f8f8f8/333333?text=Modern+Living",
-            category: "Residential"
+            logo: "/images/clients/modern-living-logo.svg",
+            category: "Residential",
         },
         {
             name: "Gourmet Restaurant",
-            logo: "https://placehold.co/200x100/f8f8f8/333333?text=Gourmet+Restaurant",
-            category: "Commercial"
-        }
+            logo: "/images/clients/gourmet-restaurant-logo.svg",
+            category: "Commercial",
+        },
     ];
 
     useEffect(() => {
@@ -74,7 +73,7 @@ const Clients = () => {
                 scrollTrigger: {
                     trigger: section,
                     start: "top 80%",
-                }
+                },
             }
         );
 
@@ -91,19 +90,21 @@ const Clients = () => {
                 scrollTrigger: {
                     trigger: section.querySelector(".clients-grid"),
                     start: "top 80%",
-                }
+                },
             }
         );
 
         // Create a continuous horizontal scroll animation for the marquee
-        const marqueeElements = section.querySelectorAll(".clients-marquee-content");
-        
+        const marqueeElements = section.querySelectorAll(
+            ".clients-marquee-content"
+        );
+
         marqueeElements.forEach((el) => {
             gsap.to(el, {
                 xPercent: -100,
                 repeat: -1,
                 duration: 25,
-                ease: "linear"
+                ease: "linear",
             });
         });
 
@@ -122,10 +123,10 @@ const Clients = () => {
 
                 <div className="clients-grid">
                     {clients.map((client, index) => (
-                        <div 
-                            className="client-card" 
+                        <div
+                            className="client-card"
                             key={index}
-                            ref={el => clientsRef.current[index] = el}
+                            ref={(el) => (clientsRef.current[index] = el)}
                         >
                             <div className="client-logo">
                                 <img src={client.logo} alt={client.name} />
@@ -142,7 +143,10 @@ const Clients = () => {
                     <div className="clients-marquee-track">
                         <div className="clients-marquee-content">
                             {clients.map((client, index) => (
-                                <div className="marquee-item" key={`marquee-1-${index}`}>
+                                <div
+                                    className="marquee-item"
+                                    key={`marquee-1-${index}`}
+                                >
                                     <span>{client.name}</span>
                                     <span className="marquee-dot">•</span>
                                 </div>
@@ -150,7 +154,10 @@ const Clients = () => {
                         </div>
                         <div className="clients-marquee-content">
                             {clients.map((client, index) => (
-                                <div className="marquee-item" key={`marquee-2-${index}`}>
+                                <div
+                                    className="marquee-item"
+                                    key={`marquee-2-${index}`}
+                                >
                                     <span>{client.name}</span>
                                     <span className="marquee-dot">•</span>
                                 </div>
@@ -161,7 +168,9 @@ const Clients = () => {
 
                 <div className="clients-cta">
                     <p>Join our growing list of satisfied clients</p>
-                    <a href="#contact" className="btn-primary">Contact Us</a>
+                    <a href="#contact" className="btn-primary">
+                        Contact Us
+                    </a>
                 </div>
             </div>
         </section>
