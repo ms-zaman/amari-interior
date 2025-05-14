@@ -1,0 +1,205 @@
+.comparison {
+    background-color: #f9f9f9;
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+.comparison::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.comparison .container {
+    position: relative;
+    z-index: 1;
+}
+
+.comparison-tabs {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.comparison-tab {
+    padding: 15px 30px;
+    background-color: white;
+    border-radius: 8px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    min-width: 200px;
+    text-align: center;
+}
+
+.comparison-tab::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.comparison-tab.active {
+    box-shadow: 0 8px 25px rgba(var(--primary-rgb), 0.15);
+}
+
+.comparison-tab.active::before {
+    transform: scaleX(1);
+}
+
+.comparison-tab:first-child {
+    border-bottom: 3px solid var(--primary);
+}
+
+.comparison-tab:last-child {
+    border-bottom: 3px solid var(--secondary);
+}
+
+.tab-label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--fg);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.comparison-tab.active .tab-label {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.comparison-table-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.comparison-table {
+    width: 100%;
+}
+
+.comparison-row {
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.comparison-row:last-child {
+    border-bottom: none;
+}
+
+.comparison-row:hover {
+    background-color: rgba(var(--primary-rgb), 0.03);
+}
+
+.comparison-category {
+    width: 30%;
+    padding: 25px 20px;
+    background-color: rgba(var(--primary-rgb), 0.03);
+    display: flex;
+    align-items: center;
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.comparison-category h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--fg);
+    margin: 0;
+}
+
+.comparison-content {
+    width: 70%;
+    padding: 20px 25px;
+}
+
+.comparison-point {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.comparison-point:last-child {
+    margin-bottom: 0;
+}
+
+.point-icon {
+    margin-right: 12px;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.comparison-point.positive .point-icon {
+    color: var(--primary);
+}
+
+.comparison-point.negative .point-icon {
+    color: var(--secondary);
+}
+
+.point-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--fg200);
+}
+
+.comparison-note {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--fg200);
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .comparison-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .comparison-tab {
+        width: 80%;
+        margin: 5px 0;
+    }
+    
+    .comparison-row {
+        flex-direction: column;
+    }
+    
+    .comparison-category {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        padding: 15px 20px;
+    }
+    
+    .comparison-content {
+        width: 100%;
+    }
+}

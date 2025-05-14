@@ -1,0 +1,66 @@
+/* Modern Section Title Styles */
+.section-title {
+    text-align: left;
+    margin-bottom: 70px;
+    position: relative;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Removed the ::before element */
+
+.section-title h2 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--fg);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    letter-spacing: -1.2px;
+    line-height: 1.1;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    text-transform: capitalize;
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 5px;
+}
+
+.section-title h2::after {
+    display: none;
+    /* Remove the old underline */
+}
+
+.section-title p {
+    font-size: 1.1rem;
+    color: var(--fg200);
+    max-width: 600px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-top: 10px;
+    position: relative;
+    padding-left: 12px;
+    border-left: 2px solid var(--primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section-title {
+        text-align: left;
+        margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+        font-size: 2.4rem;
+        letter-spacing: -0.8px;
+        border-bottom-width: 2px;
+    }
+
+    .section-title p {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+}
