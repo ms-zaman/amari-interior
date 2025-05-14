@@ -134,7 +134,7 @@ const SimpleFooter = () => {
                                     href="https://facebook.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="social-icon"
+                                    className="social-icon facebook"
                                     aria-label="Facebook"
                                 >
                                     <img
@@ -146,7 +146,7 @@ const SimpleFooter = () => {
                                     href="https://instagram.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="social-icon"
+                                    className="social-icon instagram"
                                     aria-label="Instagram"
                                 >
                                     <img
@@ -158,7 +158,7 @@ const SimpleFooter = () => {
                                     href="https://linkedin.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="social-icon"
+                                    className="social-icon linkedin"
                                     aria-label="LinkedIn"
                                 >
                                     <img
@@ -170,7 +170,7 @@ const SimpleFooter = () => {
                                     href="https://twitter.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="social-icon"
+                                    className="social-icon twitter"
                                     aria-label="Twitter"
                                 >
                                     <img
@@ -228,29 +228,59 @@ const SimpleFooter = () => {
                             ref={contactInfoRef}
                         >
                             <h3>Contact Us</h3>
+                            <p className="contact-intro">
+                                Have questions or ready to transform your space?
+                                Reach out to our design team for a consultation.
+                            </p>
                             <div className="contact-items">
                                 <div className="contact-item">
                                     <img
                                         src="/icons/location.svg"
                                         alt="Address"
                                     />
-                                    <p>
-                                        123 Design Street, Creative City, 10001
-                                    </p>
+                                    <div>
+                                        <p className="contact-label">
+                                            Our Studio
+                                        </p>
+                                        <p>
+                                            123 Design Street, Creative City,
+                                            10001
+                                        </p>
+                                        <p>Bangladesh</p>
+                                    </div>
                                 </div>
                                 <div className="contact-item">
                                     <img src="/icons/phone.svg" alt="Phone" />
-                                    <p>+1 (555) 123-4567</p>
+                                    <div>
+                                        <p className="contact-label">Call Us</p>
+                                        <p>+1 (555) 123-4567</p>
+                                        <p>+1 (555) 987-6543</p>
+                                    </div>
                                 </div>
                                 <div className="contact-item">
                                     <img src="/icons/email.svg" alt="Email" />
-                                    <p>info@amariinterior.com</p>
+                                    <div>
+                                        <p className="contact-label">
+                                            Email Us
+                                        </p>
+                                        <p>info@amariinterior.com</p>
+                                        <p>projects@amariinterior.com</p>
+                                    </div>
                                 </div>
                                 <div className="contact-item">
                                     <img src="/icons/clock.svg" alt="Hours" />
-                                    <p>Mon-Fri: 9am-6pm, Sat: 10am-4pm</p>
+                                    <div>
+                                        <p className="contact-label">
+                                            Working Hours
+                                        </p>
+                                        <p>Monday-Friday: 9am-6pm</p>
+                                        <p>Saturday: 10am-4pm</p>
+                                    </div>
                                 </div>
                             </div>
+                            <a href="#contact" className="contact-button">
+                                Schedule a Consultation
+                            </a>
                         </div>
                     </div>
                 </div>
