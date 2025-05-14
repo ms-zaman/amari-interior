@@ -230,7 +230,7 @@ const SimpleFooter = () => {
                             <h3>Contact Us</h3>
                             <p className="contact-intro">
                                 Have questions or ready to transform your space?
-                                Reach out to our design team for a consultation.
+                                Reach out to our team for a consultation.
                             </p>
                             <div className="contact-items">
                                 <div className="contact-item">
