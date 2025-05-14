@@ -1,0 +1,97 @@
+/* Hero.css - Clean modern slider styles */
+
+/* Text animation styles */
+.hero-content h1 .line {
+    overflow: hidden;
+    display: block;
+}
+
+.hero-content h1 .word {
+    display: inline-block;
+    will-change: transform, opacity;
+}
+
+/* Improved slide transition effects */
+.slide-transition {
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        scale 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, scale;
+}
+
+/* Slider controls hover effects */
+.slider-controls button {
+    transition: all 0.3s ease;
+}
+
+.slider-controls button:hover {
+    transform: scale(1.05);
+}
+
+.slider-controls button:active {
+    transform: scale(0.95);
+}
+
+/* Progress indicator animation */
+@keyframes progress-animation {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.animate-progress {
+    animation: progress-animation 6s linear;
+    transform-origin: left;
+}
+
+/* Decorative SVG elements */
+#hero svg {
+    mix-blend-mode: screen;
+    pointer-events: none;
+}
+
+#hero svg circle {
+    will-change: stroke-dashoffset;
+}
+
+/* Improved content positioning */
+.hero-content {
+    position: relative;
+}
+
+.hero-content h1 {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: -0.02em;
+}
+
+.hero-content p {
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Parallax effect for background images */
+.parallax-bg {
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-content {
+        margin-top: 0;
+    }
+
+    .slider-controls {
+        bottom: 20px;
+    }
+
+    .slider-controls>div {
+        padding: 0.5rem 1rem;
+    }
+
+    #hero svg {
+        opacity: 0.2;
+    }
+}

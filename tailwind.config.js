@@ -20,6 +20,15 @@ module.exports = {
             transitionProperty: {
                 custom: "all 0.4s ease",
             },
+            keyframes: {
+                progress: {
+                    "0%": { transform: "scaleX(0)" },
+                    "100%": { transform: "scaleX(1)" },
+                },
+            },
+            animation: {
+                progress: "progress 6s linear",
+            },
         },
         fontFamily: {
             sans: ['"Helvetica Neue"', "Arial", "sans-serif"],
