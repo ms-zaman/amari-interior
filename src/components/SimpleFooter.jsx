@@ -232,7 +232,10 @@ const SimpleFooter = () => {
                                 Have questions or ready to transform your space?
                                 Reach out to our team for a consultation.
                             </p>
-                            <div className="contact-items">
+                            <a href="#contact" className="contact-button">
+                                Schedule a Consultation
+                            </a>
+                            <div className="contact-items sr-only">
                                 <div className="contact-item">
                                     <img
                                         src="/icons/location.svg"
@@ -278,9 +281,6 @@ const SimpleFooter = () => {
                                     </div>
                                 </div>
                             </div>
-                            <a href="#contact" className="contact-button">
-                                Schedule a Consultation
-                            </a>
                         </div>
                     </div>
                 </div>
